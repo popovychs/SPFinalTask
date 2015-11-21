@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SPMainTableViewController.h
 //  SPFinalTask
 //
 //  Created by popovychs on 21.11.15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SPMainTableViewController : UITableViewController
 
 @end
-
