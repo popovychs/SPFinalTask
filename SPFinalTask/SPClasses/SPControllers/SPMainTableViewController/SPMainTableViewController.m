@@ -9,8 +9,13 @@
 #import "SPMainTableViewController.h"
 #import "SPCoreData.h"
 #import "SPBank+CoreDataProperties.h"
+#import "SPMainTableViewCell.h"
+
+static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
 
 @interface SPMainTableViewController ()
+
+@property (strong, nonatomic) NSMutableArray * arrayOfBanks;
 
 @end
 
@@ -19,11 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self downloadBankInfo];
+    [self updateBankData];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,24 +37,35 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return self.arrayOfBanks.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    SPMainTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:SPMainTableViewCellIdentefier forIndexPath:indexPath];
+    
+    if (!cell) {
+        cell = [[SPMainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SPMainTableViewCellIdentefier];
+    }
+    
+    [self settingUpCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-*/
+
+- (void) settingUpCell:(SPMainTableViewCell *)cell atIndexPath:(NSIndexPath *) indexPath
+{
+    SPBank * bank = [self.arrayOfBanks objectAtIndex:indexPath.section];
+    cell.mainCellBankNameLabel.text = bank.name;
+    cell.mainCellRegionNameLabel.text = bank.region;
+    cell.mainCellCityNameLabel.text = bank.city;
+    cell.mainCellPhoneNumberLabel.text = bank.phone;
+    cell.mainCellAddressLabel.text = bank.address;
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -96,5 +110,156 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) updateBankData
+{
+    [self updateArrayOfBanks];
+    [self sortArrayOfBanks];
+}
+
+- (void) updateArrayOfBanks
+{
+    SPCoreData * coreDataManager = [SPCoreData sharedInstance];
+    NSFetchRequest * request = [[NSFetchRequest alloc] initWithEntityName:@"Bank"];
+    self.arrayOfBanks = [[coreDataManager.managedObjectContext executeFetchRequest:request error:nil]mutableCopy];
+}
+
+- (void) sortArrayOfBanks
+{
+    NSSortDescriptor * bankSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    NSArray * sortDescriptors = [NSArray arrayWithObject:bankSortDescriptor];
+    NSArray * sortedBanks = [self.arrayOfBanks sortedArrayUsingDescriptors:sortDescriptors];
+    self.arrayOfBanks = [sortedBanks mutableCopy];
+}
+
+- (void) deleteOldDataOfBanksInDB
+{
+    SPCoreData * coreDataManager = [SPCoreData sharedInstance];
+    NSFetchRequest * request = [[NSFetchRequest alloc] initWithEntityName:@"Bank"];
+    self.arrayOfBanks = [[coreDataManager.managedObjectContext executeFetchRequest:request error:nil]mutableCopy];
+    
+    for (SPBank * bank in self.arrayOfBanks) {
+        [coreDataManager.managedObjectContext deleteObject:bank];
+    }
+    
+    NSError * error = nil;
+    if (![coreDataManager.managedObjectContext save:&error]) {
+        NSLog(@"Can't delete data: %@ %@",error, [error localizedDescription]);
+    }
+}
+
+#pragma mark - Download Bank Info
+
+- (NSURLSessionConfiguration *) configureSession
+{
+    NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.timeoutIntervalForRequest = 30.0f;
+    configuration.timeoutIntervalForResource = 60.0f;
+    return configuration;
+}
+
+- (void) downloadBankInfo
+{
+    NSURL * resourseURL =
+    [NSURL URLWithString:@"http://resources.finance.ua/ua/public/currency-cash.json"];
+    NSURLSession * session = [NSURLSession sessionWithConfiguration: [self configureSession]];
+    
+    NSURLSessionTask * getDataForURLTask =
+    [session dataTaskWithURL:resourseURL
+           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+               
+               if ([response respondsToSelector:@selector(statusCode)])
+               {
+                   if ([(NSHTTPURLResponse *) response statusCode] == 200)
+                   {
+                       NSDictionary *jsonDictionary =
+                       [self createDictionaryFromData:data];
+                       
+                       if (jsonDictionary)
+                       {
+                           [self deleteOldDataOfBanksInDB];
+                           [self createDataBaseFromDictionary:jsonDictionary];
+                       }
+                   } else {
+                       
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           //[self removeLoadingInProgressLable];
+                           UIAlertView * alert =
+                           [[UIAlertView alloc] initWithTitle:@"Downloading failed"
+                                                      message:@"Information is NOT updated!"
+                                                     delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                           [alert show];
+                       });
+                   }
+               }
+           }];
+    
+    [getDataForURLTask resume];
+}
+
+- (NSDictionary*)createDictionaryFromData: (NSData*) data
+{
+    NSError *parseJsonError = nil;
+    
+    NSDictionary *jsonDict =
+    [NSJSONSerialization JSONObjectWithData:data
+                                    options:NSJSONReadingAllowFragments
+                                      error:&parseJsonError];
+    if (!parseJsonError)
+    {
+        return jsonDict;
+    }
+    return nil;
+}
+
+- (void)createDataBaseFromDictionary: (NSDictionary*)jsonDictionary
+{
+    [self createBanksArray:jsonDictionary];
+    
+    [self updateBankData];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //[self removeLoadingInProgressLable];
+        [self.tableView reloadData];
+    });
+}
+
+- (void)createBanksArray: (NSDictionary*)jsonDictionary
+{
+    SPCoreData * coreDataManager = [SPCoreData sharedInstance];
+    
+    NSArray * allOrganizations = jsonDictionary[@"organizations"];
+    
+    for (NSDictionary * organization in allOrganizations) {
+        
+        if ([organization[@"orgType"] integerValue] == 1) {
+            SPBank * bankObject =
+            [NSEntityDescription insertNewObjectForEntityForName:@"Bank"
+                                          inManagedObjectContext:
+             coreDataManager.managedObjectContext];
+            
+            bankObject.name = organization[@"title"];
+            bankObject.address = organization[@"address"];
+            bankObject.region = organization[@"region"];
+            bankObject.city = organization[@"city"];
+            
+//            NSInteger intNumber = [organization[@"phone"] longLongValue];
+//            NSNumber *number=[NSNumber numberWithLongLong:intNumber];
+            bankObject.phone = organization[@"phone"];;
+            
+//            [self createCurrencyExchangeRatesForBank:bankObject
+//                                     usingDictionary:organization];
+//            
+//            [self setRelationshipsForBank: bankObject
+//                          usingDictionary: organization];
+        }
+    }
+    
+    NSError * error = nil;
+    if (![coreDataManager.managedObjectContext save:&error])
+    {
+        NSLog(@"Can't save banks array - %@ %@", error, [error localizedDescription]);
+    }
+}
 
 @end
