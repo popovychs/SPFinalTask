@@ -14,6 +14,8 @@
 
 @interface SPDetailTableViewController ()
 
+@property (strong, nonatomic) NSArray * currensiesArray;
+
 @end
 
 @implementation SPDetailTableViewController
@@ -21,11 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.currensiesArray = [[self.currentBank currency] allObjects];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,24 +34,53 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    switch (section) {
+        case 0:
+            return 1;
+        case 1:
+            return 1;
+        case 2:
+            return [self.currensiesArray count];
+        default:
+            return 0;
+    }
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (indexPath.section == 0 && indexPath.row == 0) {
+    SPBankDetailsCell * cell1 = [tableView dequeueReusableCellWithIdentifier:@"detailCell1" forIndexPath:indexPath];
+        cell1.bankNameLabel.text = self.currentBank.name;
+        cell1.bankLinkLabel.text = self.currentBank.link;
+        cell1.bankRegionLabel.text = self.currentBank.region;
+        cell1.bankCityLabel.text = self.currentBank.city;
+        cell1.bankAddressLabel.text = self.currentBank.address;
+        cell1.bankPhoneNumLabel.text = self.currentBank.phone;
+        
+        return cell1;
+    }
     
-    return cell;
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        SPCurrencyDescriptionCell * cell2 = [tableView dequeueReusableCellWithIdentifier:@"detailCell2" forIndexPath:indexPath];
+        return cell2;
+    }
+    
+    if (indexPath.section == 2) {
+        SPCurrencyCell * cell3 = [tableView dequeueReusableCellWithIdentifier:@"detailCell3" forIndexPath:indexPath];
+        
+        SPCurrency * currency = self.currensiesArray[indexPath.row];
+        cell3.currencyLabel.text = currency.currencyName;
+        cell3.bidLabel.text = currency.bid;
+        cell3.askLabel.text = currency.ask;
+        
+        return cell3;
+    }
+    return nil;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

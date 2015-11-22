@@ -131,7 +131,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="0VU-hg-qGS" customClass="SPBankDetailsCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell1" rowHeight="120" id="0VU-hg-qGS" customClass="SPBankDetailsCell">
                                 <rect key="frame" x="0.0" y="92" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0VU-hg-qGS" id="w0r-Os-dDS">
@@ -193,7 +193,7 @@
                                     <outlet property="bankRegionLabel" destination="gFy-Yp-q3H" id="rNc-5u-jAH"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bch-5X-rZq" customClass="SPCurrencyDescriptionCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell2" rowHeight="50" id="bch-5X-rZq" customClass="SPCurrencyDescriptionCell">
                                 <rect key="frame" x="0.0" y="212" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bch-5X-rZq" id="i2h-Zt-wtQ">
@@ -219,7 +219,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="JFA-43-D2z" customClass="SPCurrencyCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell3" rowHeight="50" id="JFA-43-D2z" customClass="SPCurrencyCell">
                                 <rect key="frame" x="0.0" y="262" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JFA-43-D2z" id="U4f-FU-Nel">
