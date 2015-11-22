@@ -2,7 +2,7 @@
 //  SPBank+CoreDataProperties.m
 //  SPFinalTask
 //
-//  Created by popovychs on 21.11.15.
+//  Created by popovychs on 22.11.15.
 //  Copyright © 2015 popovychs. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,10 +13,11 @@
 
 @implementation SPBank (CoreDataProperties)
 
-@dynamic name;
-@dynamic region;
-@dynamic city;
-@dynamic phone;
 @dynamic address;
+@dynamic city;
+@dynamic name;
+@dynamic phone;
+@dynamic region;
+@dynamic link;
 
 @end

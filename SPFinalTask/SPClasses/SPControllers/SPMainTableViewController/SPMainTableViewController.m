@@ -7,6 +7,7 @@
 //
 
 #import "SPMainTableViewController.h"
+#import "SPWebViewController.h"
 #import "SPCoreData.h"
 #import "SPBank+CoreDataProperties.h"
 #import "SPMainTableViewCell.h"
@@ -283,8 +284,7 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
         if ([organization[@"orgType"] integerValue] == 1) {
             SPBank * bankObject =
             [NSEntityDescription insertNewObjectForEntityForName:@"Bank"
-                                          inManagedObjectContext:
-             coreDataManager.managedObjectContext];
+                                          inManagedObjectContext:coreDataManager.managedObjectContext];
             
             bankObject.name = organization[@"title"];
             bankObject.address = organization[@"address"];
@@ -303,8 +303,31 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
     NSError * error = nil;
     if (![coreDataManager.managedObjectContext save:&error])
     {
-        NSLog(@"Can't save banks array - %@ %@", error, [error localizedDescription]);
+        NSLog(@"Can't save array of banks - %@ %@", error, [error localizedDescription]);
     }
 }
+
+#pragma mark - Buttons Actions
+
+- (IBAction)webButton:(UIButton *)sender {
+    
+    SPBank * bank = [self.arrayOfBanks objectAtIndex:sender.tag];
+    
+    SPWebViewController * webController = [self.storyboard instantiateViewControllerWithIdentifier:@"webController"];
+    webController.title = bank.name;
+    
+    NSString * linkToString = bank.link;
+    NSURL * stringToURL = [NSURL URLWithString:linkToString];
+    webController.bankURL = stringToURL;
+    
+    [self.navigationController pushViewController:webController animated:YES];
+}
+
+- (IBAction)mapButton:(UIButton *)sender {
+}
+
+- (IBAction)phoneButton:(UIButton *)sender {
+}
+
 
 @end

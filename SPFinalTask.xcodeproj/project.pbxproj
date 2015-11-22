@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E6FCFDB1C01C95B00F92F67 /* SPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6FCFDA1C01C95B00F92F67 /* SPWebViewController.m */; };
 		3E7F64D11C0100B100F39DA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F64D01C0100B100F39DA8 /* main.m */; };
 		3E7F64D41C0100B100F39DA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7F64D31C0100B100F39DA8 /* AppDelegate.m */; };
 		3E7F64DA1C0100B100F39DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F64D81C0100B100F39DA8 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E6FCFD91C01C95B00F92F67 /* SPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPWebViewController.h; path = SPClasses/SPControllers/SPWebViewController/SPWebViewController.h; sourceTree = "<group>"; };
+		3E6FCFDA1C01C95B00F92F67 /* SPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPWebViewController.m; path = SPClasses/SPControllers/SPWebViewController/SPWebViewController.m; sourceTree = "<group>"; };
 		3E7F64CC1C0100B100F39DA8 /* SPFinalTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPFinalTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E7F64D01C0100B100F39DA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E7F64D21C0100B100F39DA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E6FCFDC1C01C96D00F92F67 /* SPWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E6FCFD91C01C95B00F92F67 /* SPWebViewController.h */,
+				3E6FCFDA1C01C95B00F92F67 /* SPWebViewController.m */,
+			);
+			name = SPWebViewController;
+			sourceTree = "<group>";
+		};
 		3E7F64C31C0100B100F39DA8 = {
 			isa = PBXGroup;
 			children = (
@@ -74,14 +86,11 @@
 		3E7F64CE1C0100B100F39DA8 /* SPFinalTask */ = {
 			isa = PBXGroup;
 			children = (
+				3E8C57CB1C01488D007DE1A9 /* SPAppDelegate */,
 				3E7F64FC1C0117B400F39DA8 /* SPModel */,
-				3E7F64EC1C0104E400F39DA8 /* SPMainTableViewController */,
-				3E7F64F01C01055500F39DA8 /* SPTableViewCell */,
-				3E7F64D21C0100B100F39DA8 /* AppDelegate.h */,
-				3E7F64D31C0100B100F39DA8 /* AppDelegate.m */,
-				3E7F64D81C0100B100F39DA8 /* Main.storyboard */,
+				3E8C57C81C01485E007DE1A9 /* SPControllers */,
+				3E8C57C91C014871007DE1A9 /* SPView */,
 				3E7F64DE1C0100B200F39DA8 /* Assets.xcassets */,
-				3E7F64E01C0100B200F39DA8 /* LaunchScreen.storyboard */,
 				3E7F64E31C0100B200F39DA8 /* Info.plist */,
 				3E7F64DB1C0100B200F39DA8 /* SPFinalTask.xcdatamodeld */,
 				3E7F64CF1C0100B100F39DA8 /* Supporting Files */,
@@ -143,6 +152,42 @@
 				3E7F64FB1C0117A800F39DA8 /* SPCoreData */,
 			);
 			name = SPModel;
+			sourceTree = "<group>";
+		};
+		3E8C57C81C01485E007DE1A9 /* SPControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E6FCFDC1C01C96D00F92F67 /* SPWebViewController */,
+				3E7F64EC1C0104E400F39DA8 /* SPMainTableViewController */,
+				3E7F64F01C01055500F39DA8 /* SPTableViewCell */,
+			);
+			name = SPControllers;
+			sourceTree = "<group>";
+		};
+		3E8C57C91C014871007DE1A9 /* SPView */ = {
+			isa = PBXGroup;
+			children = (
+				3E8C57CA1C01487C007DE1A9 /* SPStoryboards */,
+			);
+			name = SPView;
+			sourceTree = "<group>";
+		};
+		3E8C57CA1C01487C007DE1A9 /* SPStoryboards */ = {
+			isa = PBXGroup;
+			children = (
+				3E7F64D81C0100B100F39DA8 /* Main.storyboard */,
+				3E7F64E01C0100B200F39DA8 /* LaunchScreen.storyboard */,
+			);
+			name = SPStoryboards;
+			sourceTree = "<group>";
+		};
+		3E8C57CB1C01488D007DE1A9 /* SPAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3E7F64D21C0100B100F39DA8 /* AppDelegate.h */,
+				3E7F64D31C0100B100F39DA8 /* AppDelegate.m */,
+			);
+			name = SPAppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7F64DD1C0100B200F39DA8 /* SPFinalTask.xcdatamodeld in Sources */,
+				3E6FCFDB1C01C95B00F92F67 /* SPWebViewController.m in Sources */,
 				3E7F64EB1C0104DC00F39DA8 /* SPMainTableViewController.m in Sources */,
 				3E7F64F61C01173300F39DA8 /* SPBank.m in Sources */,
 				3E7F64F51C01173300F39DA8 /* SPBank+CoreDataProperties.m in Sources */,

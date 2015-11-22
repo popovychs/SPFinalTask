@@ -62,18 +62,27 @@
                                             <animations/>
                                             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <state key="normal" image="ic_link_unactive"/>
+                                            <connections>
+                                                <action selector="webButton:" destination="y7Z-F3-Q67" eventType="touchUpInside" id="Uuc-F0-IpA"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-IB-Mfu">
                                             <rect key="frame" x="80" y="119" width="80" height="30"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <state key="normal" image="ic_mark_unactive"/>
+                                            <connections>
+                                                <action selector="mapButton:" destination="y7Z-F3-Q67" eventType="touchUpInside" id="gnY-Z0-Vtc"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ym-9Y-kJc">
                                             <rect key="frame" x="160" y="119" width="80" height="30"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <state key="normal" image="ic_phone_unactive"/>
+                                            <connections>
+                                                <action selector="phoneButton:" destination="y7Z-F3-Q67" eventType="touchUpInside" id="l96-AS-ozB"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWy-tC-WvP">
                                             <rect key="frame" x="240" y="119" width="80" height="30"/>
@@ -108,6 +117,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqh-7U-5pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="242"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="b3k-ub-aJJ">
+            <objects>
+                <viewController storyboardIdentifier="webController" id="KHF-of-Xk9" customClass="SPWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pVB-Yi-Bi8"/>
+                        <viewControllerLayoutGuide type="bottom" id="RUa-Hx-Zep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HWm-Jb-d7j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView clipsSubviews="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-jW-E0f">
+                                <rect key="frame" x="20" y="28" width="280" height="532"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BYo-jW-E0f" secondAttribute="trailing" constant="20" symbolic="YES" id="DiW-SU-2gU"/>
+                            <constraint firstItem="RUa-Hx-Zep" firstAttribute="top" secondItem="BYo-jW-E0f" secondAttribute="bottom" constant="8" symbolic="YES" id="Lqh-5g-upG"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="top" secondItem="pVB-Yi-Bi8" secondAttribute="bottom" constant="8" symbolic="YES" id="RbL-iM-ppr"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="top" secondItem="pVB-Yi-Bi8" secondAttribute="bottom" constant="8" symbolic="YES" id="gFo-bl-1gh"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="centerX" secondItem="HWm-Jb-d7j" secondAttribute="centerX" id="kqh-zB-Gt5"/>
+                            <constraint firstItem="RUa-Hx-Zep" firstAttribute="top" secondItem="BYo-jW-E0f" secondAttribute="bottom" constant="8" symbolic="YES" id="lDS-MI-5O6"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="centerY" secondItem="HWm-Jb-d7j" secondAttribute="centerY" id="mhh-3o-tkN"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="leading" secondItem="HWm-Jb-d7j" secondAttribute="leading" constant="20" symbolic="YES" id="oel-Tw-LUP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RbL-iM-ppr"/>
+                                <exclude reference="mhh-3o-tkN"/>
+                                <exclude reference="lDS-MI-5O6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="BYo-jW-E0f" id="Gn9-ZF-jTY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJK-dc-UwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YEd-5Z-0K4">
