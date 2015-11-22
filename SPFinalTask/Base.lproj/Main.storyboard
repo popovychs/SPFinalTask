@@ -89,6 +89,9 @@
                                             <animations/>
                                             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <state key="normal" image="ic_dots_unactive"/>
+                                            <connections>
+                                                <segue destination="Bb0-Vk-4B0" kind="push" id="Mr1-m4-wrP"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <animations/>
@@ -117,6 +120,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqh-7U-5pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="242"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="9lJ-cV-tgW">
+            <objects>
+                <tableViewController id="Bb0-Vk-4B0" customClass="SPDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ol8-5m-Zca">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="0VU-hg-qGS" customClass="SPBankDetailsCell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0VU-hg-qGS" id="w0r-Os-dDS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bch-5X-rZq" customClass="SPCurrencyDescriptionCell">
+                                <rect key="frame" x="0.0" y="212" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bch-5X-rZq" id="i2h-Zt-wtQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="JFA-43-D2z" customClass="SPCurrencyCell">
+                                <rect key="frame" x="0.0" y="262" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JFA-43-D2z" id="U4f-FU-Nel">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bb0-Vk-4B0" id="u25-Ac-rX0"/>
+                            <outlet property="delegate" destination="Bb0-Vk-4B0" id="s2n-Z2-Smx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="z8u-Au-ZvI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TlN-JA-VPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776" y="242"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="b3k-ub-aJJ">
@@ -194,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCK-2X-2YO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="862"/>
+            <point key="canvasLocation" x="776" y="862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YEd-5Z-0K4">

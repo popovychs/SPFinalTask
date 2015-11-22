@@ -22,6 +22,10 @@
 		3E8C57C71C013EB2007DE1A9 /* appleLogoWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C57C61C013EB2007DE1A9 /* appleLogoWhite.png */; };
 		3E90B8091C02379100E670BC /* SPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E90B8081C02379100E670BC /* SPMapViewController.m */; };
 		3E90B80C1C0244B200E670BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E90B80B1C0244B200E670BC /* MapKit.framework */; };
+		3E90B80F1C0249EC00E670BC /* SPDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E90B80E1C0249EC00E670BC /* SPDetailTableViewController.m */; };
+		3E90B8131C024E8E00E670BC /* SPBankDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E90B8121C024E8E00E670BC /* SPBankDetailsCell.m */; };
+		3E90B8171C024F1D00E670BC /* SPCurrencyDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E90B8161C024F1D00E670BC /* SPCurrencyDescriptionCell.m */; };
+		3E90B81B1C024F7E00E670BC /* SPCurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E90B81A1C024F7E00E670BC /* SPCurrencyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,14 @@
 		3E90B8071C02379100E670BC /* SPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMapViewController.h; path = SPClasses/SPControllers/SPMapViewController/SPMapViewController.h; sourceTree = "<group>"; };
 		3E90B8081C02379100E670BC /* SPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMapViewController.m; path = SPClasses/SPControllers/SPMapViewController/SPMapViewController.m; sourceTree = "<group>"; };
 		3E90B80B1C0244B200E670BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3E90B80D1C0249EC00E670BC /* SPDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPDetailTableViewController.h; path = SPClasses/SPControllers/SPDetailTableViewController/SPDetailTableViewController.h; sourceTree = "<group>"; };
+		3E90B80E1C0249EC00E670BC /* SPDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPDetailTableViewController.m; path = SPClasses/SPControllers/SPDetailTableViewController/SPDetailTableViewController.m; sourceTree = "<group>"; };
+		3E90B8111C024E8E00E670BC /* SPBankDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPBankDetailsCell.h; path = SPClasses/SPView/SPBankDetailsCell/SPBankDetailsCell.h; sourceTree = "<group>"; };
+		3E90B8121C024E8E00E670BC /* SPBankDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPBankDetailsCell.m; path = SPClasses/SPView/SPBankDetailsCell/SPBankDetailsCell.m; sourceTree = "<group>"; };
+		3E90B8151C024F1D00E670BC /* SPCurrencyDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCurrencyDescriptionCell.h; path = SPClasses/SPView/SPCurrencyDescriptionCell/SPCurrencyDescriptionCell.h; sourceTree = "<group>"; };
+		3E90B8161C024F1D00E670BC /* SPCurrencyDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCurrencyDescriptionCell.m; path = SPClasses/SPView/SPCurrencyDescriptionCell/SPCurrencyDescriptionCell.m; sourceTree = "<group>"; };
+		3E90B8191C024F7E00E670BC /* SPCurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCurrencyCell.h; path = SPClasses/SPView/SPCurrencyCell/SPCurrencyCell.h; sourceTree = "<group>"; };
+		3E90B81A1C024F7E00E670BC /* SPCurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCurrencyCell.m; path = SPClasses/SPView/SPCurrencyCell/SPCurrencyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +135,13 @@
 			name = SPMainTableViewController;
 			sourceTree = "<group>";
 		};
-		3E7F64F01C01055500F39DA8 /* SPTableViewCell */ = {
+		3E7F64F01C01055500F39DA8 /* SPMainTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				3E7F64ED1C01055100F39DA8 /* SPMainTableViewCell.h */,
 				3E7F64EE1C01055100F39DA8 /* SPMainTableViewCell.m */,
 			);
-			name = SPTableViewCell;
+			name = SPMainTableViewCell;
 			sourceTree = "<group>";
 		};
 		3E7F64F71C01173C00F39DA8 /* SPBank */ = {
@@ -164,10 +176,10 @@
 		3E8C57C81C01485E007DE1A9 /* SPControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3E90B8101C0249F300E670BC /* SPDeatilTableViewController */,
 				3E90B80A1C02379C00E670BC /* SPMapViewController */,
 				3E6FCFDC1C01C96D00F92F67 /* SPWebViewController */,
 				3E7F64EC1C0104E400F39DA8 /* SPMainTableViewController */,
-				3E7F64F01C01055500F39DA8 /* SPTableViewCell */,
 			);
 			name = SPControllers;
 			sourceTree = "<group>";
@@ -175,6 +187,10 @@
 		3E8C57C91C014871007DE1A9 /* SPView */ = {
 			isa = PBXGroup;
 			children = (
+				3E7F64F01C01055500F39DA8 /* SPMainTableViewCell */,
+				3E90B8141C024E9400E670BC /* SPBankDetailsCell */,
+				3E90B8181C024F2100E670BC /* SPCurrencyDescriptionCell */,
+				3E90B81C1C024F8200E670BC /* SPCurrencyCell */,
 				3E8C57CA1C01487C007DE1A9 /* SPStoryboards */,
 			);
 			name = SPView;
@@ -205,6 +221,42 @@
 				3E90B8081C02379100E670BC /* SPMapViewController.m */,
 			);
 			name = SPMapViewController;
+			sourceTree = "<group>";
+		};
+		3E90B8101C0249F300E670BC /* SPDeatilTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E90B80D1C0249EC00E670BC /* SPDetailTableViewController.h */,
+				3E90B80E1C0249EC00E670BC /* SPDetailTableViewController.m */,
+			);
+			name = SPDeatilTableViewController;
+			sourceTree = "<group>";
+		};
+		3E90B8141C024E9400E670BC /* SPBankDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				3E90B8111C024E8E00E670BC /* SPBankDetailsCell.h */,
+				3E90B8121C024E8E00E670BC /* SPBankDetailsCell.m */,
+			);
+			name = SPBankDetailsCell;
+			sourceTree = "<group>";
+		};
+		3E90B8181C024F2100E670BC /* SPCurrencyDescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				3E90B8151C024F1D00E670BC /* SPCurrencyDescriptionCell.h */,
+				3E90B8161C024F1D00E670BC /* SPCurrencyDescriptionCell.m */,
+			);
+			name = SPCurrencyDescriptionCell;
+			sourceTree = "<group>";
+		};
+		3E90B81C1C024F8200E670BC /* SPCurrencyCell */ = {
+			isa = PBXGroup;
+			children = (
+				3E90B8191C024F7E00E670BC /* SPCurrencyCell.h */,
+				3E90B81A1C024F7E00E670BC /* SPCurrencyCell.m */,
+			);
+			name = SPCurrencyCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,13 +331,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7F64DD1C0100B200F39DA8 /* SPFinalTask.xcdatamodeld in Sources */,
+				3E90B80F1C0249EC00E670BC /* SPDetailTableViewController.m in Sources */,
 				3E6FCFDB1C01C95B00F92F67 /* SPWebViewController.m in Sources */,
+				3E90B81B1C024F7E00E670BC /* SPCurrencyCell.m in Sources */,
+				3E90B8131C024E8E00E670BC /* SPBankDetailsCell.m in Sources */,
 				3E7F64EB1C0104DC00F39DA8 /* SPMainTableViewController.m in Sources */,
 				3E7F64F61C01173300F39DA8 /* SPBank.m in Sources */,
 				3E7F64F51C01173300F39DA8 /* SPBank+CoreDataProperties.m in Sources */,
 				3E7F64D41C0100B100F39DA8 /* AppDelegate.m in Sources */,
 				3E90B8091C02379100E670BC /* SPMapViewController.m in Sources */,
 				3E7F64FA1C01178E00F39DA8 /* SPCoreData.m in Sources */,
+				3E90B8171C024F1D00E670BC /* SPCurrencyDescriptionCell.m in Sources */,
 				3E7F64D11C0100B100F39DA8 /* main.m in Sources */,
 				3E7F64EF1C01055100F39DA8 /* SPMainTableViewCell.m in Sources */,
 			);

@@ -10,7 +10,7 @@
 
 @interface SPMapViewController ()
 
-@property (weak, nonatomic) IBOutlet MKMapView *bankLocationMapView;
+@property (weak, nonatomic) IBOutlet MKMapView * bankLocationMapView;
 @property (assign, nonatomic) CLLocationCoordinate2D bankCoordinates;
 
 @end
@@ -44,6 +44,17 @@
             [self showAlertWithTitle:@"Error" message:@"Can't view map"];
         }
     }];
+}
+
+- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.bankCoordinates, 1000, 1000);
+    [self.bankLocationMapView setRegion:[self.bankLocationMapView regionThatFits:region] animated:YES];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = self.bankCoordinates;
+    point.title = self.bank.name;
+    [self.bankLocationMapView addAnnotation:point];
 }
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message{
