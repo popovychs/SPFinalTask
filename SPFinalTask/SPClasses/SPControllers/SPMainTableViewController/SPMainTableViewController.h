@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SPMainTableViewController : UITableViewController
+@interface SPMainTableViewController : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating>
 
 @end

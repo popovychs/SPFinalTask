@@ -17,6 +17,9 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
 
 @property (strong, nonatomic) NSMutableArray * arrayOfBanks;
 
+@property (strong, nonatomic) UISearchBar * searchBar;
+@property (strong, nonatomic) UISearchController * searchController;
+
 @end
 
 @implementation SPMainTableViewController
@@ -25,6 +28,15 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
     [super viewDidLoad];
     
     self.title = @"Converter Lab";
+    
+    //searchBar
+    UIBarButtonItem * searchButton = [[UIBarButtonItem alloc]
+                                      initWithImage: [UIImage imageNamed:@"ic_search"]
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(searchButtonPressed)];
+    self.navigationItem.rightBarButtonItem = searchButton;
+    [self addSearchBar];
     
     [self downloadBankInfo];
     [self updateBankData];
@@ -117,6 +129,33 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UISearchBar configuratin
+
+-(void)addSearchBar
+{
+    self.searchBar = [[UISearchBar alloc] init];
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchBar.delegate = self;
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.tintColor = [UIColor whiteColor];
+}
+
+- (void)searchButtonPressed {
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.searchController.active = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.tableView.tableHeaderView = nil;
+    self.searchController.searchBar.text = nil;
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    [self updateBankData];
+    [self.tableView reloadData];
+}
 
 - (void) updateBankData
 {
