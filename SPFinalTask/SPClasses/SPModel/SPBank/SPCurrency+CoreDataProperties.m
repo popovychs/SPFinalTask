@@ -1,5 +1,5 @@
 //
-//  SPBank+CoreDataProperties.m
+//  SPCurrency+CoreDataProperties.m
 //  SPFinalTask
 //
 //  Created by popovychs on 23.11.15.
@@ -9,17 +9,13 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "SPBank+CoreDataProperties.h"
+#import "SPCurrency+CoreDataProperties.h"
 
-@implementation SPBank (CoreDataProperties)
+@implementation SPCurrency (CoreDataProperties)
 
-@dynamic address;
-@dynamic city;
-@dynamic link;
-@dynamic name;
-@dynamic phone;
-@dynamic region;
-@dynamic id;
-@dynamic currency;
+@dynamic currencyName;
+@dynamic bid;
+@dynamic ask;
+@dynamic bank;
 
 @end

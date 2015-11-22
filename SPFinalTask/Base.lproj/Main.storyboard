@@ -146,28 +146,35 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Yp-q3H">
-                                            <rect key="frame" x="8" y="28" width="304" height="21"/>
+                                            <rect key="frame" x="8" y="37" width="304" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKZ-C3-143">
+                                            <rect key="frame" x="8" y="23" width="304" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-26-ady">
-                                            <rect key="frame" x="8" y="43" width="304" height="21"/>
+                                            <rect key="frame" x="8" y="53" width="304" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-hd-a12">
-                                            <rect key="frame" x="8" y="64" width="304" height="21"/>
+                                            <rect key="frame" x="8" y="72" width="304" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2h-tj-t25">
-                                            <rect key="frame" x="8" y="84" width="304" height="21"/>
+                                            <rect key="frame" x="8" y="89" width="304" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -180,6 +187,7 @@
                                 <connections>
                                     <outlet property="bankAddressLabel" destination="hJg-hd-a12" id="KHU-qi-i2L"/>
                                     <outlet property="bankCityLabel" destination="OMf-26-ady" id="f0u-CM-ZAf"/>
+                                    <outlet property="bankLinkLabel" destination="EKZ-C3-143" id="eIZ-am-qbe"/>
                                     <outlet property="bankNameLabel" destination="6Bj-7h-Vhn" id="dhN-Ui-pzl"/>
                                     <outlet property="bankPhoneNumLabel" destination="X2h-tj-t25" id="WVQ-lM-rgj"/>
                                     <outlet property="bankRegionLabel" destination="gFy-Yp-q3H" id="rNc-5u-jAH"/>

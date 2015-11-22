@@ -1,15 +1,15 @@
 //
-//  SPBank.m
+//  SPCurrency.m
 //  SPFinalTask
 //
 //  Created by popovychs on 23.11.15.
 //  Copyright © 2015 popovychs. All rights reserved.
 //
 
-#import "SPBank.h"
 #import "SPCurrency.h"
+#import "SPBank.h"
 
-@implementation SPBank
+@implementation SPCurrency
 
 // Insert code here to add functionality to your managed object subclass
 

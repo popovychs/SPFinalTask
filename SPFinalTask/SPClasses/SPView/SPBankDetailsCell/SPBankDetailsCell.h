@@ -11,9 +11,10 @@
 @interface SPBankDetailsCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel * bankNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bankRegionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bankCityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bankAddressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bankPhoneNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bankRegionLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bankCityLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bankAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bankPhoneNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bankLinkLabel;
 
 @end

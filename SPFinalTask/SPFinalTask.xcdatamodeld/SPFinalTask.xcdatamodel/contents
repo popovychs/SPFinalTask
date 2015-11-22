@@ -3,12 +3,21 @@
     <entity name="Bank" representedClassName="SPBank" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Currency" inverseName="bank" inverseEntity="Currency" syncable="YES"/>
+    </entity>
+    <entity name="Currency" representedClassName="SPCurrency" syncable="YES">
+        <attribute name="ask" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bank" inverseName="currency" inverseEntity="Bank" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bank" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Bank" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Currency" positionX="-63" positionY="27" width="128" height="105"/>
     </elements>
 </model>

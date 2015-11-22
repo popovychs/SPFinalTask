@@ -7,6 +7,10 @@
 //
 
 #import "SPDetailTableViewController.h"
+#import "SPBankDetailsCell.h"
+#import "SPCurrencyDescriptionCell.h"
+#import "SPCurrencyCell.h"
+#import "SPCurrency.h"
 
 @interface SPDetailTableViewController ()
 
