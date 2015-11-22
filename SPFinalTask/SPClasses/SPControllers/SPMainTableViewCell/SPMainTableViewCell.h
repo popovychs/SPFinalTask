@@ -16,4 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel * mainCellPhoneNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel * mainCellAddressLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *mainCellLinkButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainCellMapButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainCellPhoneButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainCellDetailButton;
+
 @end

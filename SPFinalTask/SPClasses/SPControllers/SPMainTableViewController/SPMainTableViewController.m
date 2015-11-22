@@ -24,6 +24,8 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Converter Lab";
+    
     [self downloadBankInfo];
     [self updateBankData];
     [self.tableView reloadData];
@@ -65,6 +67,11 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
     cell.mainCellCityNameLabel.text = bank.city;
     cell.mainCellPhoneNumberLabel.text = bank.phone;
     cell.mainCellAddressLabel.text = bank.address;
+    
+    cell.mainCellLinkButton.tag = indexPath.section;
+    cell.mainCellMapButton.tag = indexPath.section;
+    cell.mainCellPhoneButton.tag = indexPath.section;
+    cell.mainCellDetailButton.tag = indexPath.section;
 }
 
 /*
@@ -242,10 +249,7 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
             bankObject.address = organization[@"address"];
             bankObject.region = organization[@"region"];
             bankObject.city = organization[@"city"];
-            
-//            NSInteger intNumber = [organization[@"phone"] longLongValue];
-//            NSNumber *number=[NSNumber numberWithLongLong:intNumber];
-            bankObject.phone = organization[@"phone"];;
+            bankObject.phone = organization[@"phone"];
             
 //            [self createCurrencyExchangeRatesForBank:bankObject
 //                                     usingDictionary:organization];

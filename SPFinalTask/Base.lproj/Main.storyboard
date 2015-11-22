@@ -32,31 +32,55 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-fZ-OEx">
                                             <rect key="frame" x="8" y="29" width="304" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lq-kA-P8Q">
                                             <rect key="frame" x="8" y="46" width="304" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-if-UJ0">
                                             <rect key="frame" x="8" y="70" width="304" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlv-xA-tg8">
                                             <rect key="frame" x="8" y="87" width="304" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYB-gB-8k4">
+                                            <rect key="frame" x="0.0" y="119" width="80" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <state key="normal" image="ic_link_unactive"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-IB-Mfu">
+                                            <rect key="frame" x="80" y="119" width="80" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <state key="normal" image="ic_mark_unactive"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ym-9Y-kJc">
+                                            <rect key="frame" x="160" y="119" width="80" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <state key="normal" image="ic_phone_unactive"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWy-tC-WvP">
+                                            <rect key="frame" x="240" y="119" width="80" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <state key="normal" image="ic_dots_unactive"/>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -65,6 +89,10 @@
                                     <outlet property="mainCellAddressLabel" destination="Rlv-xA-tg8" id="hMn-xb-L52"/>
                                     <outlet property="mainCellBankNameLabel" destination="QSM-s0-yEH" id="OXB-c0-pNb"/>
                                     <outlet property="mainCellCityNameLabel" destination="1lq-kA-P8Q" id="s88-j4-t1Q"/>
+                                    <outlet property="mainCellDetailButton" destination="BWy-tC-WvP" id="K8c-l0-DHc"/>
+                                    <outlet property="mainCellLinkButton" destination="YYB-gB-8k4" id="gsg-3b-mra"/>
+                                    <outlet property="mainCellMapButton" destination="inJ-IB-Mfu" id="iDq-tm-WZ3"/>
+                                    <outlet property="mainCellPhoneButton" destination="9ym-9Y-kJc" id="wOy-fG-7y9"/>
                                     <outlet property="mainCellPhoneNumberLabel" destination="HE4-if-UJ0" id="qf4-3f-AJR"/>
                                     <outlet property="mainCellRegionNameLabel" destination="DRh-fZ-OEx" id="nuA-ev-Jjd"/>
                                 </connections>
@@ -102,4 +130,10 @@
             <point key="canvasLocation" x="12" y="242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_dots_unactive" width="28" height="8"/>
+        <image name="ic_link_unactive" width="26" height="14"/>
+        <image name="ic_mark_unactive" width="16" height="22"/>
+        <image name="ic_phone_unactive" width="20" height="20"/>
+    </resources>
 </document>
