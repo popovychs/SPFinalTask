@@ -10,4 +10,8 @@
 
 @interface SPCurrencyCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel * currencyLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bidLabel;
+@property (weak, nonatomic) IBOutlet UILabel * askLabel;
+
 @end
