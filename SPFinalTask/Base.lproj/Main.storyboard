@@ -130,8 +130,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-dE-hAP">
+                                <rect key="frame" x="142" y="275" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <webView clipsSubviews="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-jW-E0f">
-                                <rect key="frame" x="20" y="28" width="280" height="532"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
@@ -140,31 +145,56 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BYo-jW-E0f" secondAttribute="trailing" constant="20" symbolic="YES" id="DiW-SU-2gU"/>
-                            <constraint firstItem="RUa-Hx-Zep" firstAttribute="top" secondItem="BYo-jW-E0f" secondAttribute="bottom" constant="8" symbolic="YES" id="Lqh-5g-upG"/>
-                            <constraint firstItem="BYo-jW-E0f" firstAttribute="top" secondItem="pVB-Yi-Bi8" secondAttribute="bottom" constant="8" symbolic="YES" id="RbL-iM-ppr"/>
-                            <constraint firstItem="BYo-jW-E0f" firstAttribute="top" secondItem="pVB-Yi-Bi8" secondAttribute="bottom" constant="8" symbolic="YES" id="gFo-bl-1gh"/>
-                            <constraint firstItem="BYo-jW-E0f" firstAttribute="centerX" secondItem="HWm-Jb-d7j" secondAttribute="centerX" id="kqh-zB-Gt5"/>
-                            <constraint firstItem="RUa-Hx-Zep" firstAttribute="top" secondItem="BYo-jW-E0f" secondAttribute="bottom" constant="8" symbolic="YES" id="lDS-MI-5O6"/>
-                            <constraint firstItem="BYo-jW-E0f" firstAttribute="centerY" secondItem="HWm-Jb-d7j" secondAttribute="centerY" id="mhh-3o-tkN"/>
-                            <constraint firstItem="BYo-jW-E0f" firstAttribute="leading" secondItem="HWm-Jb-d7j" secondAttribute="leading" constant="20" symbolic="YES" id="oel-Tw-LUP"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="top" secondItem="pVB-Yi-Bi8" secondAttribute="bottom" id="MKB-pg-EYa"/>
+                            <constraint firstItem="BYo-jW-E0f" firstAttribute="leading" secondItem="HWm-Jb-d7j" secondAttribute="leading" id="T7I-4C-QEz"/>
+                            <constraint firstItem="RUa-Hx-Zep" firstAttribute="top" secondItem="BYo-jW-E0f" secondAttribute="bottom" id="TWo-q1-zD7"/>
+                            <constraint firstAttribute="trailing" secondItem="BYo-jW-E0f" secondAttribute="trailing" id="vPI-pk-cfz"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="RbL-iM-ppr"/>
-                                <exclude reference="mhh-3o-tkN"/>
-                                <exclude reference="lDS-MI-5O6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="actInd" destination="2bW-dE-hAP" id="doV-Bn-nAL"/>
                         <outlet property="webView" destination="BYo-jW-E0f" id="Gn9-ZF-jTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJK-dc-UwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="862"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="WEi-th-cz2">
+            <objects>
+                <viewController storyboardIdentifier="mapController" id="co1-Rd-fJp" customClass="SPMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qND-bb-oNc"/>
+                        <viewControllerLayoutGuide type="bottom" id="zjp-63-td4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vbt-lZ-o3r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-EL-F2f">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bCs-EL-F2f" firstAttribute="leading" secondItem="vbt-lZ-o3r" secondAttribute="leading" id="4V4-r7-83E"/>
+                            <constraint firstAttribute="trailing" secondItem="bCs-EL-F2f" secondAttribute="trailing" id="GE8-y2-FT8"/>
+                            <constraint firstItem="zjp-63-td4" firstAttribute="top" secondItem="bCs-EL-F2f" secondAttribute="bottom" id="Pb0-aq-0tm"/>
+                            <constraint firstItem="bCs-EL-F2f" firstAttribute="top" secondItem="qND-bb-oNc" secondAttribute="bottom" id="cBH-by-grr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bankLocationMapView" destination="bCs-EL-F2f" id="sus-eW-N4T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wCK-2X-2YO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744" y="862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YEd-5Z-0K4">
@@ -177,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </textAttributes>

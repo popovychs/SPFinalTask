@@ -8,6 +8,7 @@
 
 #import "SPMainTableViewController.h"
 #import "SPWebViewController.h"
+#import "SPMapViewController.h"
 #import "SPCoreData.h"
 #import "SPBank+CoreDataProperties.h"
 #import "SPMainTableViewCell.h"
@@ -324,10 +325,16 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
 }
 
 - (IBAction)mapButton:(UIButton *)sender {
+    
+    SPBank * bank = [self.arrayOfBanks objectAtIndex:sender.tag];
+    SPMapViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"mapController"];
+    mapView.title = @"Bank Location";
+    mapView.bank = bank;
+    
+    [self.navigationController pushViewController:mapView animated:YES];
 }
 
 - (IBAction)phoneButton:(UIButton *)sender {
 }
-
 
 @end

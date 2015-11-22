@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView * webView;
 @property (strong, nonatomic) NSURL * bankURL;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actInd;
 
 @end

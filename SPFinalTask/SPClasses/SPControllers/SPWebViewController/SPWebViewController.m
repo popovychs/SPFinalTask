@@ -36,12 +36,15 @@
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
-    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    [self.view bringSubviewToFront:self.actInd];
+    [self.actInd startAnimating];
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [self.actInd stopAnimating];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
