@@ -157,6 +157,8 @@ static NSString * const SPMainTableViewCellIdentefier = @"bankCell";
     [self.tableView reloadData];
 }
 
+#pragma mark - CoreData managment
+
 - (void) updateBankData
 {
     [self updateArrayOfBanks];
